@@ -2,9 +2,13 @@
 Collection of useful ffmpeg commands for processing audio and video files.  
 
 ## FFMPEG
-[FFMPEG](https://www.ffmpeg.org/) is an extremely useful library for manipulating audio and video files. Here are some ffmpeg commands that I use frequently in my work (stored here so that I do not lose them). Some of the commands have been lifted directly from other sources (mostly from stack overflow), others have been modified. Many include some simple bash programming so that they can be applied to an entire folder at a time. 
+[FFMPEG](https://www.ffmpeg.org/) is an extremely useful library for manipulating audio and video files. It is free and available for Windows, Mac and Linux. 
+
+Here are some ffmpeg commands that I use frequently in my work (stored here so that I do not lose them). Some of the commands have been lifted directly from other sources (mostly from stack overflow), others have been modified. Some include some simple bash programming so that they can be applied to an entire folder at a time. 
 
 Disclaimer: The examples here often do not explain all the different option flags available. If you require a full thorough list, please read the [documentation](https://www.ffmpeg.org/ffmpeg-all.html) directly in a browser, or use the terminal command `man ffmpeg-all`.
+
+This list will be updated with more commands as and when I use them. Contributions are welcome. 
 
 
 ## (1) Extract a single image frame from a video
@@ -46,7 +50,12 @@ frame rate specified by the -r flag, -start_number to specify the fist frame of 
 
 ```ffmpeg -r 1/25 -start_number 9999 -i 000%05d.jpg -c:v libx264 -vf fps=25 -pix_fmt yuv420p out2.mp4```
 
-## (9) Batch convert audio to single channel with a sampling frequency of 16kHz 
+## (9) Extract only the audio from a video
+The -vn switch extracts the audio from a video, the -ab switch saves the audio as a 256kbps MP3 audio file.
+
+```ffmpeg -i video.mp4 -vn -ab 256 audio.mp3```
+
+## (10) Batch convert audio to single channel with a sampling frequency of 16kHz 
 Convert all wav files in a folder to single channel 16kHz. 
 
 ```
