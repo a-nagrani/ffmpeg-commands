@@ -47,8 +47,10 @@ frame rate specified by the -r flag, -start_number to specify the fist frame of 
 ```ffmpeg -r 1/25 -start_number 9999 -i 000%05d.jpg -c:v libx264 -vf fps=25 -pix_fmt yuv420p out2.mp4```
 
 ## (9) Batch convert audio to single channel with a sampling frequency of 16kHz 
+Convert all wav files in a folder to single channel 16kHz. 
 
-```for i in *.wav;
+```
+for i in *.wav;
   do name=`echo $i | cut -d'.' -f1`;
   echo $name;
   echo $i;
