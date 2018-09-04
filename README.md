@@ -6,7 +6,7 @@ Collection of useful ffmpeg commands for processing audio and video files.
 
 Here are some ffmpeg commands that I use frequently in my work (stored here so that I do not lose them). Some of the commands have been lifted directly from other sources (mostly from stack overflow), others have been modified. Some include simple bash programming so that they can be applied to an entire folder at a time. 
 
-Disclaimer: The examples here often do not explain all the different option flags available. If you require a full thorough list, please read the [documentation](https://www.ffmpeg.org/ffmpeg-all.html) directly in a browser, or use the terminal command `man ffmpeg-all`.
+Disclaimer: The examples here often do not explain all the different option flags available. If you require a full thorough list, please read the [documentation here](https://www.ffmpeg.org/ffmpeg-all.html), or use the terminal command `man ffmpeg-all`.
 
 This list will be updated with more commands as and when I use them. Contributions are welcome. 
 
