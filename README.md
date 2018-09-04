@@ -4,7 +4,7 @@ Collection of useful ffmpeg commands for processing audio and video files.
 ## FFMPEG
 [FFMPEG](https://www.ffmpeg.org/) is an extremely useful library for manipulating audio and video files. It is free and available for Windows, Mac and Linux. 
 
-Here are some ffmpeg commands that I use frequently in my work (stored here so that I do not lose them). Some of the commands have been lifted directly from other sources (mostly from stack overflow), others have been modified. Some include some simple bash programming so that they can be applied to an entire folder at a time. 
+Here are some ffmpeg commands that I use frequently in my work (stored here so that I do not lose them). Some of the commands have been lifted directly from other sources (mostly from stack overflow), others have been modified. Some include simple bash programming so that they can be applied to an entire folder at a time. 
 
 Disclaimer: The examples here often do not explain all the different option flags available. If you require a full thorough list, please read the [documentation](https://www.ffmpeg.org/ffmpeg-all.html) directly in a browser, or use the terminal command `man ffmpeg-all`.
 
