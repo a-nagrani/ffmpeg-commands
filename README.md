@@ -22,9 +22,12 @@ Extracts frames at a frame rate of 1 frame per minute. Most TV shows and other v
 ```ffmpeg -i video.mp4 -threads 1 -deinterlace -q:v 1 -vf fps=1/60 frame%03d.jpg ```
 
 ## (3) Convert video from one format to another
-You can use the -vcodec parameter to specify the encoding format to be used for the output video. Encoding a video takes time but you can speed up the process by forcing a preset though it would degrade the quality of the output video.
+You can use the -vcodec parameter to specify the encoding format to be used for the output video. 
 
 ```ffmpeg -i youtube.flv -c:v libx264 filename.mp4 ```
+
+If you want to speed up the process you can force a preset (however this will degrade the quality of the output video).
+
 ```ffmpeg -i video.wmv -c:v libx264 -preset ultrafast video.mp```
 
 ## (4) Convert all the videos in a folder to mp4 
