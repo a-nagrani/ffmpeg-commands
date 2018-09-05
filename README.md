@@ -12,13 +12,13 @@ This list will be updated with more commands as and when I use them. Contributio
 
 ##  Basics 
 
-To display your media file details(audio/video file information), run
+To display media file details (audio/video file information), run
 
 ``` 
 ffmpeg -i video.mp4 
 ```
 
-To check list of supported formats by FFmpeg, run
+To check the list of supported formats by FFmpeg, run
 
 ``` 
 ffmpeg -formats 
