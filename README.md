@@ -45,7 +45,18 @@ Extracts frames at a frame rate of 1 frame per minute. Most TV shows and other v
 ```
 ffmpeg -i video.mp4 -threads 1 -deinterlace -q:v 1 -vf fps=1/60 frame%03d.jpg 
 ```
+Bash script to do it for an entire dataset assuming the folder structure has two levels: 
 
+``` 
+ #!/bin/bash
+ for file in videos/*; do
+     for file2 in "$file/"*.avi; do
+     destination="frames/$(basename $file)/$(basename $file2)";
+     mkdir -p "$destination";
+     ffmpeg -i "$file2" -vf "scale=-1:300,fps=25" "$destination/%03d.jpg";
+     done
+ done
+```
 ## (3) Convert video from one format to another
 You can use the -vcodec parameter to specify the encoding format to be used for the output video. 
 
