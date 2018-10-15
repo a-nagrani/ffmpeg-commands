@@ -101,10 +101,10 @@ ffmpeg -i video.mp4 -vf scale=500:-1 -t 10 -r 10 image.gif
 ```
 
 ## (8) Create a video from frames
-frame rate specified by the -r flag, -start_number to specify the fist frame of the desired output video. 
+frame rate specified by the -r flag, -start_number to specify the fist frame of the desired output video. This commands creates a video with fps = 25. 
 
 ```
-ffmpeg -r 1/25 -start_number 9999 -i 000%05d.jpg -c:v libx264 -vf fps=25 -pix_fmt yuv420p out2.mp4
+ffmpeg -r 25 -start_number 9999 -i 000%05d.jpg -c:v libx264 -vf fps=25 -pix_fmt yuv420p out2.mp4
 ```
 
 ## (9) Extract only the audio from a video
