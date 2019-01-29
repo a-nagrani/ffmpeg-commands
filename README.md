@@ -154,6 +154,7 @@ for x in f:
     name = 'chopped ' + input[0]
     start = int(input[1])
     os.system('ffmpeg -ss {} -t {} -i {} {}'.format(start,duration,path,name))
+f.close()
 ```
 
 
