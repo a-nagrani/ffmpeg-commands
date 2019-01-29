@@ -32,6 +32,8 @@ ffplay video.mp4
 
 to preview or test video or audio files in the terminal itself. On a mac, run ` brew install ffmpeg --with-sdl2` to install ffmpeg with ffplay. 
 
+
+
 ## (1) Extract a single image frame from a video
 This command will extract the video frame at the 15s mark and saves it as a 800px wide JPEG image. You can also use the -s switch (like -s 400×300) to specify the exact dimensions of the image file though it will probably create a stretched image if the image size doesn’t follow the aspect ratio of the original video file.
 
@@ -135,6 +137,25 @@ for i in *.wav;
   ffmpeg -i  $i  -acodec pcm_s16le -ac 1 -ar 16000 “${name}.wav"; 
 done
 ```
+
+##  Calling ffmpeg from within python 
+
+You can call ffmpeg from within a python script using `os.system`. This can make it easy to run through a bunch of filenames stored in a text file for example, in case you do not want to use bash. Here is an example to cut videos from a particular start time specified in a text file (in seconds). The text file format is: 
+PATH STARTTIME 
+
+
+```
+import os 
+f = open("videolist.txt", "r")
+duration = 10*60 #cut into 10 minute segments
+for x in f:
+    input = x.split()
+    path = input[0]
+    name = 'chopped ' + input[0]
+    start = int(input[1])
+    os.system('ffmpeg -ss {} -t {} -i {} {}'.format(start,duration,path,name))
+```
+
 
 
 
